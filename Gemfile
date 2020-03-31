@@ -8,6 +8,9 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.4'
 gem 'redis'
+gem "actionview", ">= 5.2.4.2"
+
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
