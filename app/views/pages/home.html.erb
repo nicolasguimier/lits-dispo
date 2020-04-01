@@ -1,14 +1,30 @@
-<h1>Les hopitaux</h1>
-<ul>
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+			<div
+			  id="map"
+			  style="width: 100%;
+			  height: 600px;"
+			  data-markers="<%= @markers.to_json %>"
+			  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+			></div>
+		</div>
+		<div class="col-8">
+			<% @hospitals.each do |hospital| %>
+				<div class="hospital-card d-flex justify-content-between mb-4 p-2">
+					<div class="hospital-infos">
+						<b><%= hospital.name %></b><br>
+						<%= hospital.address %><br>
+						Tel : <%= hospital.phone %><br>
+						<i>Mise à jour : <%= hospital.updated_at %></i>
 
-</ul>
-<% @hospitals.each do |hospital| %>
-	<li><b><%= hospital.name %></b> : <%= hospital.free_beds_number %> lits disponibles (sur <%= hospital.total_beds_nb %>)</li>
-<% end %>
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+					</div>
+					<div class="hospital-beds">
+						<%= hospital.free_beds_number %> / <%= hospital.total_beds_nb %>
+
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

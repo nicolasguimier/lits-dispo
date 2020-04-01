@@ -1,5 +1,5 @@
 import mapboxgl from 'mapbox-gl';
-
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
@@ -33,13 +33,15 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
-  });
+  	});
 
-  const markers = JSON.parse(mapElement.dataset.markers);
-  addMarkersToMap(map, markers);
-  fitMapToMarkers(map, markers);
+	  const markers = JSON.parse(mapElement.dataset.markers);
+  	addMarkersToMap(map, markers);
+  	fitMapToMarkers(map, markers);
+
+  	map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                      mapboxgl: mapboxgl }));
   }
 };
-
 
 export { initMapbox };
