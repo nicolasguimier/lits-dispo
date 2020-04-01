@@ -5,7 +5,3 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
-
-
-const sortAlphaSelector = document.getElementById("sort-alpha")
-const sortNumberSelector = document.getElementById("sort-number")
