@@ -34,7 +34,7 @@ creteil.save!
 
 puts "-> Start CHU"
 amiens = Hospital.new(name: 'CHU Amiens',
-	address: 'CHU, Place Victor Pauchet, 80054 Amiens',
+	address: 'CHU, Place Victor Pauchet, 80000 Amiens',
 	phone: '03 22 08 80 00',
 	contact_infos: '',
 	owner: igor)
@@ -42,7 +42,7 @@ amiens.save!
 # sleep(2)
 angers = Hospital.new(
 	name: 'CHU Angers',
-  address: "CHU, 4 Rue Larrey, 49100 Angers",
+  address: "4 Rue Larrey, 49000 Angers",
   contact_infos: 'Service de réanimation, aile gauche',
   phone: '02 41 35 36 37',
   total_beds_nb: 30,
@@ -51,21 +51,21 @@ angers = Hospital.new(
 angers.save!
 # sleep(2)
 besancon = Hospital.new(name: 'CHU Besançon',
-	address: 'CHU, 2 Place Saint-Jacques, 25030 Besançon',
+	address: '2 Place Saint-Jacques, 25000 Besançon',
 	phone: '03 81 66 81 66',
 	contact_infos: '',
 	owner: igor)
 besancon.save!
 # sleep(2)
 bordeaux= Hospital.new(name: 'CHU Bordeaux',
-	address: 'CHU, 12 rue Dubernat, 33404 Talence',
+	address: '12 rue Dubernat, 33400 Talence',
 	phone: '05 56 79 56 79',
 	contact_infos: '',
 	owner: igor)
 bordeaux.save!
 # sleep(2)
 brest = Hospital.new(name: 'CHRU Brest',
-	address: 'CHRU 29000 BREST',
+	address: '2 avenue du Maréchal Foch, 29200 BREST',
 	phone: '02 98 22 33 33',
 	contact_infos: '',
 	owner: igor)
@@ -128,7 +128,7 @@ lyon = Hospital.new(name: 'Hospices Civils de Lyon',
 lyon.save!
 # sleep(2)
 marseille = Hospital.new(name: 'Assistance Publique - Hôpitaux de Marseille',
-	address: '80 rue Brochier, 13005 Marseille',
+	address: '80 rue Brochier, 13000 Marseille',
 	phone: '04 91 38 00 00',
 	contact_infos: '',
 	owner: igor)
@@ -174,14 +174,14 @@ nantes = Hospital.new(
 nantes.save!
 # sleep(2)
 nice = Hospital.new(name: 'CHU Nice',
-	address: '4 av Reine Victoria, 06003 Nice',
+	address: '4 avenue de la Reine Victoria, 06000 Nice',
 	phone: '04 92 03 77 77',
 	contact_infos: '',
 	owner: igor)
 nice.save!
 # sleep(2)
 nimes = Hospital.new(name: 'CHU Nîmes',
-	address: 'place du Pr Robert Debré, 30000 Nîmes',
+	address: 'Rue du Professeur Debré, 30907 Nîmes',
 	phone: '04 66 68 68 68',
 	contact_infos: '',
 	owner: igor)
