@@ -1,0 +1,17 @@
+<div class="hospital-card">
+	<div class="hospital-infos">
+		<b><%= hospital.name %></b><br>
+		<%= hospital.address %><br>
+		Tel : <%= hospital.phone %><br>
+		<i>Mise à jour : <%= hospital.updated_at %></i>
+
+	</div>
+	<div class="hospital-beds">
+		<% if hospital.free_beds_number %>
+		<%= hospital.free_beds_number %> <i class="fa fa-bed"></i>
+		<% else %>
+		?
+		<% end %>
+
+	</div>
+</div>

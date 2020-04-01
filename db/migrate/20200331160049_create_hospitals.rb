@@ -7,9 +7,7 @@ class CreateHospitals < ActiveRecord::Migration[5.2]
       t.string :address
       t.float :latitude
       t.float :longitude
-      t.integer :total_beds_nb
       t.integer :free_beds_number
-      t.references :owner, foreign_key: {to_table: :users }
 
       t.timestamps
     end

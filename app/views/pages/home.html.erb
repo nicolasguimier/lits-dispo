@@ -10,25 +10,12 @@
 			></div>
 		</div>
 		<div class="col-8" id="hospital-listing">
-			Trier par : <span class="btn" id="sort-alpha">Ordre alpha</span> - <span class="btn" id="sort-number">Nb de lits</span>
-			<% @hospitals.each do |hospital| %>
-				<div class="hospital-card">
-					<div class="hospital-infos">
-						<b><%= hospital.name %></b><br>
-						<%= hospital.address %><br>
-						Tel : <%= hospital.phone %><br>
-						<i>Mise à jour : <%= hospital.updated_at %></i>
-
-					</div>
-					<div class="hospital-beds">
-						<% if hospital.free_beds_number %>
-						<%= hospital.free_beds_number %> <i class="fa fa-bed"></i>
-						<% else %>
-						?
-						<% end %>
-
-					</div>
-				</div>
+			<% @known_hospitals.each do |hospital| %>
+				<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
+			<% end %>
+			<p>Nombre de lits inconnus :</p>
+			<% @pending_hospitals.each do |hospital| %>
+				<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
 			<% end %>
 		</div>
 	</div>

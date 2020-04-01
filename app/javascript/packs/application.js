@@ -6,3 +6,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+
+const sortAlphaSelector = document.getElementById("sort-alpha")
+const sortNumberSelector = document.getElementById("sort-number")
