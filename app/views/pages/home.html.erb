@@ -11,7 +11,7 @@
 		</div>
 		<div class="col-8">
 			<% @hospitals.each do |hospital| %>
-				<div class="hospital-card d-flex justify-content-between mb-4 p-2">
+				<div class="hospital-card">
 					<div class="hospital-infos">
 						<b><%= hospital.name %></b><br>
 						<%= hospital.address %><br>
@@ -20,7 +20,11 @@
 
 					</div>
 					<div class="hospital-beds">
-						<%= hospital.free_beds_number %> / <%= hospital.total_beds_nb %>
+						<% if hospital.free_beds_number %>
+						<%= hospital.free_beds_number %> <i class="fa fa-bed"></i>
+						<% else %>
+						?
+						<% end %>
 
 					</div>
 				</div>

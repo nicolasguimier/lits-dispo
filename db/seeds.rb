@@ -216,7 +216,7 @@ poitiers = Hospital.new(name: 'CHU Poitiers',
 poitiers.save!
 # sleep(2)
 reims = Hospital.new(name: 'CHU Reims',
-	address: '45, rue Cognacq-Jay, 51000 Reims',
+	address: '45 rue Cognacq-Jay, 51000 Reims',
 	phone: '03 26 78 78 78',
 	contact_infos: '',
 	owner: igor)
