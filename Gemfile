@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+# system
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -9,15 +10,17 @@ gem 'puma'
 gem 'rails', '5.2.4'
 gem 'redis'
 
+# My app / BAck
+gem "recaptcha"
+gem 'geocoder'
 
+# Front
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-
-gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

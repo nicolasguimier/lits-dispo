@@ -1,0 +1,28 @@
+<% if session[:code] %>
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-4">
+			<div
+			  id="map"
+			  style="width: 100%;
+			  height: 600px;"
+			  data-markers="<%= @markers.to_json %>"
+			  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+			></div>
+		</div>
+		<div class="col-8" id="hospital-listing">
+			<% @known_hospitals.each do |hospital| %>
+				<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
+			<% end %>
+			<p>Nombre de lits inconnus :</p>
+			<% @pending_hospitals.each do |hospital| %>
+				<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<% else %>
+Vous n'avez pas les permissions pour accéder à cette page.
+<%= link_to "Retour à l'acceuil", root_path %>
+<% end %>
