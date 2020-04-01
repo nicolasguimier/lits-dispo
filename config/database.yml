@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: lits-dispo_production
-  username: lits-dispo
-  password: <%= ENV['LITS-DISPO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
