@@ -9,7 +9,8 @@
 			  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 			></div>
 		</div>
-		<div class="col-8">
+		<div class="col-8" id="hospital-listing">
+			Trier par : <span class="btn" id="sort-alpha">Ordre alpha</span> - <span class="btn" id="sort-number">Nb de lits</span>
 			<% @hospitals.each do |hospital| %>
 				<div class="hospital-card">
 					<div class="hospital-infos">
