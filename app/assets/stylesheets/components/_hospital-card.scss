@@ -9,6 +9,11 @@
 	color: white;
 
 	.hospital-beds {
-		font-size: 3em;
+		.number {
+			font-size: 3em;
+		}
+		.links a{
+			color: white;
+		}
 	}
 }

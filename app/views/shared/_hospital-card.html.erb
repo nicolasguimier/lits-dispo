@@ -7,11 +7,15 @@
 
 	</div>
 	<div class="hospital-beds">
+		<div class="number">
 		<% if hospital.free_beds.count != 0 %>
 		<%= hospital.free_beds.last.number %> <i class="fa fa-procedures"></i>
 		<% else %>
 		?
 		<% end %>
-
+		</div>
+		<div class="links">
+			<%= link_to "modifier", new_hospital_free_bed_path(hospital) %>
+		</div>
 	</div>
 </div>

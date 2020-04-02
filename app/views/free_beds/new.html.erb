@@ -1,0 +1,31 @@
+<%#= simple_form_for(@booking, as: :booking, method: :post, url: chicken_bookings_path(@chicken)) do |f| %>
+<%#= simple_form_for(@free_bed, as: :free_bed, method: :post, url: chicken_bookings_path(@chicken)) do |f| %>
+<div class="container">
+	<h1><%= @hospital.name %></h1>
+	<div class="row">
+		<div class="col-6">
+			<h2>Valeur actuelle :</h2>
+			<p><b><%= @current_nb_beds %></b></p>
+			<h2>Historique</h2>
+			<ul>
+			<% @history.each do |free_bed| %>
+				<li><%= free_bed.number %> (<%= free_bed.updated_at %>)</li>
+			<% end %>
+			</ul>
+		</div>
+		<div class="col-6">
+			<p>Nouvelle valeur :</p>
+			<%= simple_form_for [@hospital, @free_bed] do |f| %>
+			  <% if @free_bed.errors.any? %>
+			    <p class="text-danger"><%= @free_bed.errors[:free_bed].first  %></p>
+			  <% end %>
+			  <div class=" form-inputs col-auto">
+			    <%= f.input :number, required: true, as: :integer, label:"Nb de lits disponibles" %>
+			  </div>
+			  <div class="form-actions col-auto">
+			    <%= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
+			  </div>
+			<% end %>
+		</div>
+	</div>
+</div>

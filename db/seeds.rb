@@ -20,7 +20,7 @@ katarina.save!
 puts "#{User.count} users imported."
 
 
-puts '-> Start Hostpitals'
+puts '-> Start Hospitals'
 
 creteil = Hospital.new(
     name: 'Hopital intercommunal de Créteil',

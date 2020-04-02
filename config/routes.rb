@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   post '/submit-code', to:'codes#submit'
 
-  resources :hospitals, only: [:index]
+  resources :hospitals, only: [:index] do
+  	resources :free_beds, only: [:new, :create]
+  end
 end
