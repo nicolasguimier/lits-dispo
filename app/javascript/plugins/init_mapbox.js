@@ -7,7 +7,7 @@ const addMarkersToMap = (map, markers) => {
 
     const element = document.createElement('div');
     element.className = 'marker';
-    element.style.backgroundImage = `url('https://image.flaticon.com/icons/png/512/33/33777.png')`;
+    element.style.backgroundImage = `url('https://image.flaticon.com/icons/svg/45/45781.svg')`;
     element.style.backgroundSize = 'contain';
     element.style.width = '30px';
     element.style.height = '30px';
