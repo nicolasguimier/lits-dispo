@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_160049) do
+ActiveRecord::Schema.define(version: 2020_04_02_140404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "free_beds", force: :cascade do |t|
+    t.integer "number"
+    t.bigint "hospital_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospital_id"], name: "index_free_beds_on_hospital_id"
+  end
 
   create_table "hospitals", force: :cascade do |t|
     t.string "name"
@@ -22,12 +30,9 @@ ActiveRecord::Schema.define(version: 2020_03_31_160049) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.integer "total_beds_nb"
-    t.integer "free_beds_number"
-    t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_hospitals_on_owner_id"
+    t.string "status", default: "enabled", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +47,5 @@ ActiveRecord::Schema.define(version: 2020_03_31_160049) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "hospitals", "users", column: "owner_id"
+  add_foreign_key "free_beds", "hospitals"
 end

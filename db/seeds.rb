@@ -1,5 +1,6 @@
 puts 'Start seeds'
-
+FreeBed.destroy_all
+puts 'FreeBed table dropped'
 Hospital.destroy_all
 puts 'Hospital table dropped'
 User.destroy_all
@@ -28,9 +29,6 @@ creteil = Hospital.new(
     phone: '01 45 17 59 60 - 01 45 17 56 42 '
     )
 creteil.save!
-
-
-puts "-> Start CHU"
 amiens = Hospital.new(name: 'CHU Amiens',
 	address: 'CHU, Place Victor Pauchet, 80000 Amiens',
 	phone: '03 22 08 80 00',
@@ -41,8 +39,7 @@ angers = Hospital.new(
 	name: 'CHU Angers',
   address: "4 Rue Larrey, 49000 Angers",
   contact_infos: 'Service de réanimation, aile gauche',
-  phone: '02 41 35 36 37',
-  free_beds_number: 25)
+  phone: '02 41 35 36 37')
 angers.save!
 # sleep(2)
 besancon = Hospital.new(name: 'CHU Besançon',
@@ -145,11 +142,10 @@ nantes = Hospital.new(
     name: 'CHU de Nantes',
     address: "5 Allée de l'Île Gloriette, 44093 Nantes",
     contact_infos: 'Dr Richard, Service réanimation, 4ème étage',
-    phone: '04 05 06 07 08',
-    free_beds_number: 20
+    phone: '04 05 06 07 08'
     )
 nantes.save!
-# sleep(2)
+sleep(2)
 nice = Hospital.new(name: 'CHU Nice',
 	address: '4 avenue de la Reine Victoria, 06000 Nice',
 	phone: '04 92 03 77 77',
@@ -229,4 +225,26 @@ tours = Hospital.new(name: 'CHU Tours',
 tours.save!
 
 puts "#{Hospital.count} hospitals imported."
+
+puts "-> Start Beds"
+FreeBed.create(
+	hospital: nantes,
+	number:25)
+FreeBed.create(
+	hospital: nantes,
+	number:24)
+FreeBed.create(
+	hospital: nantes,
+	number:23)
+FreeBed.create(
+	hospital: nantes,
+	number:22)
+FreeBed.create(
+	hospital: nantes,
+	number:21)
+FreeBed.create(
+	hospital: tours,
+	number:10)
+
+puts "#{FreeBed.count} beds imported."
 puts 'End Feeds'

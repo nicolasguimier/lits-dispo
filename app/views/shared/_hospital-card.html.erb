@@ -7,8 +7,8 @@
 
 	</div>
 	<div class="hospital-beds">
-		<% if hospital.free_beds_number %>
-		<%= hospital.free_beds_number %> <i class="fa fa-procedures"></i>
+		<% if hospital.free_beds.count != 0 %>
+		<%= hospital.free_beds.last.number %> <i class="fa fa-procedures"></i>
 		<% else %>
 		?
 		<% end %>
