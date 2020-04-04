@@ -5,7 +5,7 @@
 			<p class="text-danger"><%= @hospital.errors[:hospital].first  %></p>
 		<% end %>
 		<%= f.input :name, required: true, placeholder:"Nom de l'établissement", label: false %>
-		<%= f.input :address, required: true, placeholder:"Adresse", label: false %>
+		<%= f.input :address, required: true, placeholder:"Adresse", label: false, input_html: { id:"flat_address" } %>
 		<%= f.input :phone, placeholder:"Téléphone", label: false %>
 		<%= f.input :contact_infos, placeholder:"Autres informations de contact", label: false %>
 		<%= f.simple_fields_for :free_beds do |free_beds_form| %>
