@@ -11,13 +11,18 @@
 			></div>
 		</div>
 		<div class="col-8" id="hospital-listing">
-			<% @known_hospitals.each do |hospital| %>
-				<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
-			<% end %>
-			<p>Nombre de lits inconnus :</p>
-			<% @pending_hospitals.each do |hospital| %>
-				<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
-			<% end %>
+			<div class="mb-2">
+				<%= link_to 'Ajouter un établissement', new_hospital_path, class: "btn btn-primary" %>
+			</div>
+			<div>
+				<% @known_hospitals.each do |hospital| %>
+					<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
+				<% end %>
+				<p>Nombre de lits inconnus :</p>
+				<% @pending_hospitals.each do |hospital| %>
+					<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

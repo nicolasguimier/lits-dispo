@@ -1,0 +1,21 @@
+<div class="container">
+	<h1>Enregistrer un nouvel établissement hopitalier :</h1>
+	<%= simple_form_for @hospital do |f| %>
+		<% if @hospital.errors.any? %>
+			<p class="text-danger"><%= @hospital.errors[:hospital].first  %></p>
+		<% end %>
+		<%= f.input :name, required: true, placeholder:"Nom de l'établissement", label: false %>
+		<%= f.input :address, required: true, placeholder:"Adresse", label: false %>
+		<%= f.input :phone, placeholder:"Téléphone", label: false %>
+		<%= f.input :contact_infos, placeholder:"Autres informations de contact", label: false %>
+		<%= f.simple_fields_for :free_beds do |free_beds_form| %>
+    	<%= free_beds_form.input :number, as: :integer, placeholder:"Nombre de lits vides", label: false %>
+  	<% end %>
+
+		<%#= f.input :number, placeholder:"Nombre de lits libres", label: false %>
+		<%#= f.fields_for @hospital.build_free_beds do |g| %>
+    	<%#= g.text_field :number %>
+  	<%# end %>
+		<%= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
+	<% end %>
+</div>
