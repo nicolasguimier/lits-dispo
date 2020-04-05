@@ -9,7 +9,7 @@
 			<h2>Historique</h2>
 			<ul>
 			<% @history.each do |free_bed| %>
-				<li><%= free_bed.number %> (<%= free_bed.updated_at %>)</li>
+				<li><%= free_bed.number ? free_bed.number : "non défini" %> (<%= free_bed.updated_at %>)</li>
 			<% end %>
 			</ul>
 		</div>
