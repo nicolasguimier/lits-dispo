@@ -11,7 +11,7 @@
 	</div>
 	<div class="hospital-beds">
 		<div class="number">
-		<% if hospital.free_beds.count != 0 %>
+		<% if hospital.free_beds.count != 0 && hospital.free_beds.last.number%>
 		<%= hospital.free_beds.last.number %> <i class="fa fa-procedures"></i>
 		<% else %>
 		?

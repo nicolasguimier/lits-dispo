@@ -7,7 +7,7 @@ class FreeBedsController < ApplicationController
   	@history = FreeBed.where(hospital_id: params[:hospital_id]).reverse
 
 
-  	if @hospital.free_beds.count != 0
+  	if @hospital.free_beds.count != 0 && @hospital.free_beds.last.number
   		@current_nb_beds = @hospital.free_beds.last.number
   	else
   		@current_nb_beds = "Non défini"
