@@ -16,6 +16,7 @@
 		<%#= f.fields_for @hospital.build_free_beds do |g| %>
     	<%#= g.text_field :number %>
   	<%# end %>
-		<%= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
+		<%#= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
+		<%= invisible_recaptcha_tags text: 'Enregistrer', class: "btn btn-primary" %>
 	<% end %>
 </div>

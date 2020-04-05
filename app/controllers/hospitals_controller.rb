@@ -27,7 +27,6 @@ class HospitalsController < ApplicationController
     if @hospital.save && @free_bed.save
       redirect_to hospitals_path, notice: "L'établissement a été enregistré."
     else
-    	raise
       render :new
     end
   end
