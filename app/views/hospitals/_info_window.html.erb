@@ -1,4 +1,6 @@
-<p><b><%= hospital.name %></b></p>
-<% if hospital.free_beds.count != 0 %>
-<p><%= hospital.free_beds.last.number %> lits dispos</p>
+<b><%= hospital.name %></b><br>
+<% if hospital.free_beds.count != 0 && hospital.free_beds.last.number %>
+<%= hospital.free_beds.last.number %> lits dispos
+<% else %>
+nb de lits non défini
 <% end %>
