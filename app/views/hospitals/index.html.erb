@@ -11,8 +11,16 @@
 			></div>
 		</div>
 		<div class="col-8" id="hospital-listing">
-			<div class="mb-2">
-				<%= link_to 'Ajouter un établissement', new_hospital_path, class: "btn btn-primary" %>
+			<div class="d-flex justify-content-between mb-2">
+				<div>
+					<div class="has-search">
+				    <span class="fa fa-search form-control-feedback"></span>
+						<input type="text" id="searchHospitalInput" placeholder="Chercher un établissement">
+				  </div>
+				</div>
+				<div>
+					<%= link_to 'Ajouter un établissement', new_hospital_path, class: "btn btn-primary" %>
+				</div>
 			</div>
 			<div>
 				<% @known_hospitals.each do |hospital| %>

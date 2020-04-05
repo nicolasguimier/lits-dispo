@@ -1,10 +1,13 @@
 <div class="hospital-card">
 	<div class="hospital-infos">
-		<b><%= hospital.name %></b><br>
-		<%= hospital.address %><br>
-		Tel : <%= hospital.phone %><br>
-		<i>Mise à jour : <%= hospital.updated_at %></i>
-
+		<div class="hospital-text">
+			<b><%= hospital.name %></b><br>
+			<%= hospital.address %><br>
+		</div>
+		<div>
+			Tel : <%= hospital.phone %><br>
+			<i>Mise à jour : <%= hospital.updated_at %></i>
+		</div>
 	</div>
 	<div class="hospital-beds">
 		<div class="number">
