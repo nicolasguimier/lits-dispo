@@ -1,7 +1,29 @@
 <% if session[:code] %>
 <div class="container">
 	<div class="row mt-5">
-		<div class="col-4">
+		<div class="col-12 col-md-8" id="hospital-listing">
+			<div class="d-flex flex-column flex-md-row justify-content-between">
+				<div class="mb-2">
+					<div class="has-search">
+				    <span class="fa fa-search form-control-feedback"></span>
+						<input type="text" id="searchHospitalInput" placeholder="Chercher un établissement">
+				  </div>
+				</div>
+				<div class="mb-2">
+					<%= link_to '<i class="fa fa-plus" aria-hidden="true"></i> Ajouter un établissement'.html_safe, new_hospital_path, class: "btn btn-secondary" %>
+					<%= link_to '<i class="fas fa-map-marked-alt"></i> Voir la map'.html_safe, '#map', class: "btn btn-secondary d-md-none" %>
+				</div>
+			</div>
+			<div>
+				<% @known_hospitals.each do |hospital| %>
+					<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
+				<% end %>
+				<% @pending_hospitals.each do |hospital| %>
+					<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-12 col-md-4">
 			<div
 			  id="map"
 			  style="width: 100%;
@@ -9,28 +31,6 @@
 			  data-markers="<%= @markers.to_json %>"
 			  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 			></div>
-		</div>
-		<div class="col-8" id="hospital-listing">
-			<div class="d-flex justify-content-between mb-2">
-				<div>
-					<div class="has-search">
-				    <span class="fa fa-search form-control-feedback"></span>
-						<input type="text" id="searchHospitalInput" placeholder="Chercher un établissement">
-				  </div>
-				</div>
-				<div>
-					<%= link_to 'Ajouter un établissement', new_hospital_path, class: "btn btn-primary" %>
-				</div>
-			</div>
-			<div>
-				<% @known_hospitals.each do |hospital| %>
-					<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
-				<% end %>
-				<p>Nombre de lits inconnus :</p>
-				<% @pending_hospitals.each do |hospital| %>
-					<%= render partial: 'shared/hospital-card', locals: {hospital: hospital } %>
-				<% end %>
-			</div>
 		</div>
 	</div>
 </div>

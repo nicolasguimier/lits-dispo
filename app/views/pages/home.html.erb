@@ -1,11 +1,13 @@
 <div class="container">
 	<div class="row mt-5">
-		<%= form_tag(submit_code_path, class:"d-flex justify-content-center mb-5") do %>
-    <%= text_field_tag 'code', nil, placeholder: "Saisissez Votre code", required: true %>
-    <%= invisible_recaptcha_tags text: 'Valider', class: "btn btn-primary" %>
-    <%# Code for displaying visible catcha, to click, instead of invisible %>
-    <%#= recaptcha_tags %>
-    <%#= submit_tag 'Valider', class: "btn btn-primary" %>
-  <% end %>
+		<div class="col-12">
+			<%= form_tag(submit_code_path, class:"d-flex justify-content-center mb-5") do %>
+	    <%= text_field_tag 'code', nil, placeholder: "Saisissez Votre code", required: true %>
+	    <%= invisible_recaptcha_tags text: 'Valider', class: "btn btn-primary" %>
+	    <%# Code for displaying visible catcha, to click, instead of invisible %>
+	    <%#= recaptcha_tags %>
+	    <%#= submit_tag 'Valider', class: "btn btn-primary" %>
+	  	<% end %>
+		</div>
 	</div>
 </div>
