@@ -1,11 +1,27 @@
-<div class="container">
-	<div class="row mt-5">
-		<%= form_tag(submit_code_path, class:"d-flex justify-content-center mb-5") do %>
-    <%= text_field_tag 'code', nil, placeholder: "Saisissez Votre code", required: true %>
-    <%= invisible_recaptcha_tags text: 'Valider', class: "btn btn-primary" %>
+<body class="background">
+  <div class="container row mt-3 pl-5 font-weight-bolder">
+    <h2>“Guérir parfois, soulager souvent, écouter toujours.” L. Pasteur</h2>
+  </div>
+  <div class = "container row pl-5">
+    <h4>Outil de recherche de lits de réanimation</h4>
+  </div>
+  <!-- <div class= "container row pl-5">
+    <%#= form_tag(submit_code_path, class:"d-flex justify-content-center mb-5") do %>
+    <%#= text_field_tag 'code', nil, placeholder: "Saisissez Votre code", required: true %>
+    <%#= invisible_recaptcha_tags text: 'Valider', class: "btn btn-primary" %>
     <%# Code for displaying visible catcha, to click, instead of invisible %>
     <%#= recaptcha_tags %>
     <%#= submit_tag 'Valider', class: "btn btn-primary" %>
-  <% end %>
-	</div>
-</div>
+    <%# end %>
+  </div> -->
+  <div class= "container row pl-5">
+    <h4>Trouvez les lits disponibles pour réanimation dans le cadre de la lutte contre le Covid-19.</h4>
+    <p>Suite au témoignage de nombreux soignants et de leur difficulté à trouver des lits en réanimation disponible, nous avons souhaité proposer un outil simple destiné aux établissements de santé.
+      <ul>
+        <li>Vous souhaitez trouver un lit en réanimation disponible sur le territoire ou dans votre région ?</li>
+        <li>Votre établissement dispose de lits disponibles, et vous souhaitez proposer des places en réanimation ?</li>
+      </ul>
+      Agissez rapidement et commencer votre recherche dès maintenant. Merci de n'utiliser ce service que si vous en êtes destinataire.
+    </p>
+  </div>
+</body>
