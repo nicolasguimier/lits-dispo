@@ -9,7 +9,7 @@
 			<h2>Historique</h2>
 			<ul>
 			<% @history.each do |free_bed| %>
-				<li><%= free_bed.number %> (<%= free_bed.updated_at %>)</li>
+				<li><%= free_bed.number ? free_bed.number : "non défini" %> (<%= free_bed.updated_at %>)</li>
 			<% end %>
 			</ul>
 		</div>
@@ -23,7 +23,8 @@
 			    <%= f.input :number, required: true, as: :integer, label:"Nb de lits disponibles" %>
 			  </div>
 			  <div class="form-actions col-auto">
-			    <%= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
+			    <%#= f.button :submit, "Enregistrer", class: "btn btn-primary" %>
+			    <%= invisible_recaptcha_tags text: 'Enregistrer', class: "btn btn-primary" %>
 			  </div>
 			<% end %>
 		</div>

@@ -1,14 +1,17 @@
 <div class="hospital-card">
 	<div class="hospital-infos">
-		<b><%= hospital.name %></b><br>
-		<%= hospital.address %><br>
-		Tel : <%= hospital.phone %><br>
-		<i>Mise à jour : <%= hospital.updated_at %></i>
-
+		<div class="hospital-text">
+			<b><%= hospital.name %></b><br>
+			<%= hospital.address %><br>
+		</div>
+		<div>
+			Tel : <%= hospital.phone %><br>
+			<i>Mise à jour : <%= hospital.updated_at %></i>
+		</div>
 	</div>
 	<div class="hospital-beds">
 		<div class="number">
-		<% if hospital.free_beds.count != 0 %>
+		<% if hospital.free_beds.count != 0 && hospital.free_beds.last.number%>
 		<%= hospital.free_beds.last.number %> <i class="fa fa-procedures"></i>
 		<% else %>
 		?
