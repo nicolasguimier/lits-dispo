@@ -1,3 +1,12 @@
+<%
+	nb_of_beds = "?"
+	last_update = hospital.updated_at
+	if hospital.free_beds.count != 0 && hospital.free_beds.last.number
+		nb_of_beds = hospital.free_beds.last.number.to_s + " <i class='fa fa-procedures'></i>"
+		last_update = hospital.free_beds.last.updated_at
+	end
+%>
+
 <div class="hospital-card">
 	<div class="hospital-infos">
 		<div class="hospital-text">
@@ -6,16 +15,12 @@
 		</div>
 		<div>
 			Tel : <%= hospital.phone %><br>
-			<i>Mise à jour : <%= hospital.updated_at %></i>
+			<i>Mise à jour : <%= last_update %></i>
 		</div>
 	</div>
 	<div class="hospital-beds">
 		<div class="number">
-		<% if hospital.free_beds.count != 0 && hospital.free_beds.last.number%>
-		<%= hospital.free_beds.last.number %> <i class="fa fa-procedures"></i>
-		<% else %>
-		?
-		<% end %>
+		<%= nb_of_beds.html_safe %>
 		</div>
 		<div class="links">
 			<%= link_to "modifier", new_hospital_free_bed_path(hospital) %>
