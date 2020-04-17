@@ -13,6 +13,7 @@ gem 'redis'
 # My app / BAck
 gem "recaptcha"
 gem 'geocoder'
+gem 'mail_form'
 
 # Front
 gem 'autoprefixer-rails'
@@ -33,4 +34,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'letter_opener'
 end

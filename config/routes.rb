@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :hospitals, only: [:index, :new, :create] do
   	resources :free_beds, only: [:new, :create]
   end
+
+  resources "contacts", only: [:new, :create]
 end
